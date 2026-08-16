@@ -1,0 +1,92 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.loading{
+  background-color: aliceblue;
+  color: rgb(172, 23, 48);
+}
+header{
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.head{
+  color: rgb(0, 255, 191);
+  background-color: #ffffff;
+  text-align: left;
+  box-shadow: 0px 4px 0px black;
+  padding: 10px;
+  width: 100%;
+  font-family: "Pixelify Sans", sans-serif;
+  display: flex;
+}
+.head h2{
+  width: 100%;
+  height: 100%;
+}
+.head button{
+  margin-left: -20%;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #ffffff;
+  border: 2px solid black;
+  box-shadow: 2px 3px 0px black;
+  font-size: medium;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  transition: .3s;
+}
+.head button:hover{
+ cursor: pointer;
+ transform: scale(1.1);
+}
+.pizza-data{
+  width: 100%;
+  height: 500px;
+  background-color:#FFA552;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+     background-image:
+        linear-gradient(#ffffff10 2px, transparent 2px),
+        linear-gradient(90deg, #ffffff10 2px, transparent 2px);
+
+    background-size: 24px 24px;
+}
+.pizza-data img{
+  width: 50%;
+  max-width: 400px;
+  padding: 30px;
+   filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.3));
+}
+.pizza-data h1{
+  padding: 10px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  width: 50%;
+}
+.pizza-data span{
+    font-family: "Pixelify Sans", sans-serif;
+    border-bottom: 2px solid black;
+    background-color: #ff6b6b;
+   
+}
+
+@media (max-width:500px) {
+  .pizza-data{
+    display: flex;
+    flex-direction: column;
+  }
+  .pizza-data h1{
+    width: 100%;
+    text-align: center;
+  }
+  .pizza-data img{
+    width: 60%;
+  }
+}
