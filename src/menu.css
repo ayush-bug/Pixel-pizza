@@ -19,7 +19,7 @@ header{
     height: 50px;
     border: 3px solid black;
 }
-header div{
+header .menu{
     width: 25%;
     height: 100%;
     border-right: 3px solid black;
@@ -31,11 +31,90 @@ header div{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .search-items{
- width: 20%;
+ width: 60%;
  height: 30px;
  text-align: center;
  border: 2px solid black;
  outline: none;
 font-weight: bold;
 font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.cart{
+    width: 30px;
+    height: 30px;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.input-continer{
+    width: auto;
+    display: flex;
+    gap: 20px;
+    height: auto;
+}
+
+.menu-container{
+    width: 100%;
+    height: auto;
+    border: 3px solid black;
+    background-color: aliceblue;
+    padding: 20px;
+    display: grid;
+    grid-template-columns:auto;
+    gap: 10px;
+}
+.food{
+    width:100%;
+    height: 150px;
+    border: 2px solid black;
+    padding: 5px;
+    background-color: #ffe0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    transition: 0.2s;
+}
+.food:hover{
+ box-shadow: 2px 3px 0px black;
+}
+@media (min-width:1024px) {
+    .menu-container{
+        grid-template-columns: auto auto auto auto;
+    }
+}
+
+
+.food-info{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.food-name{
+    margin: 0;
+    font-size: 22px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.price{
+    font-size: 24px;
+    font-family: monospace;
+}
+.addToCart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+.addToCart button{
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 2px solid black;
+    box-shadow: 2px 2px 0px black;
+    background:#74B9FF;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.addToCart small{
+    font-family: monospace;
 }

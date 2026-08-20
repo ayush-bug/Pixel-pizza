@@ -1,12 +1,197 @@
 import '/src/menu.css'
-document.querySelector("#app").innerHTML = ` 
+document.querySelector("#app").innerHTML = `
 <h1> menu items check </h1>
 `;
-document.querySelector("#app").innerHTML = ` 
-<div class="main-container"> 
+document.querySelector("#app").innerHTML = /*html*/ `
+<div class="main-container">
   <header>
- <div> Menu</div>
- <input type="search" placeholder="Search itmes" class="search-items">
+    <div class="menu"> Menu</div>
+    <div class="input-continer">
+      <input type="search" placeholder="Search itmes" class="search-items">
+      <div class="cart"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+          class="bi bi-bag-check-fill" viewBox="0 0 16 16">
+          <path fill-rule="evenodd"
+            d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0m-.646 5.354a.5.5 0 0 0-.708-.708L7.5 10.793 6.354 9.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z" />
+        </svg>
+      </div>
+
+    </div>
   </header>
+  <br>
+  <main>
+    <div class="menu-container">
+      <div class="food">
+        <div class="food-info">
+          <h3 class="food-name">Single Topping</h3>
+          <span class="price">&#8377;170</span>
+        </div>
+        <div class="addToCart">
+          <button> Add +</button>
+          <small>customizable</small>
+        </div>
+      </div>
+      <div class="food">
+        <div class="food-info">
+          <h3 class="food-name">Paneer N Corn Delight</h3>
+          <span class="price">&#8377;190</span>
+        </div>
+        <div class="addToCart">
+          <button> Add +</button>
+          <small>customizable</small>
+        </div>
+      </div>
+      <div class="food">
+        <div class="food-info">
+          <h3 class="food-name">Spicy Crunch</h3>
+          <span class="price">&#8377;200</span>
+        </div>
+        <div class="addToCart">
+          <button> Add +</button>
+          <small>customizable</small>
+        </div>
+      </div>
+      <div class="food">
+        <div class="food-info">
+          <h3 class="food-name">Double Cheese Margherita</h3>
+          <span class="price">&#8377;170</span>
+        </div>
+        <div class="addToCart">
+          <button> Add +</button>
+          <small>customizable</small>
+        </div>
+      </div>
+      <div class="food">
+        <div class="food-info">
+          <h3 class="food-name">Double Cheese Margherita</h3>
+          <span class="price">&#8377;170</span>
+        </div>
+        <div class="addToCart">
+          <button> Add +</button>
+          <small>customizable</small>
+        </div>
+      </div>
+      <div class="food">
+        <div class="food-info">
+          <h3 class="food-name">Double Cheese Margherita</h3>
+          <span class="price">&#8377;170</span>
+        </div>
+        <div class="addToCart">
+          <button> Add +</button>
+          <small>customizable</small>
+        </div>
+      </div>
+      <div class="food">
+        <div class="food-info">
+          <h3 class="food-name">Double Cheese Margherita</h3>
+          <span class="price">&#8377;170</span>
+        </div>
+        <div class="addToCart">
+          <button> Add +</button>
+          <small>customizable</small>
+        </div>
+      </div>
+      <div class="food">
+        <div class="food-info">
+          <h3 class="food-name">Double Cheese Margherita</h3>
+          <span class="price">&#8377;170</span>
+        </div>
+        <div class="addToCart">
+          <button> Add +</button>
+          <small>customizable</small>
+        </div>
+      </div>
+      <div class="food">
+        <div class="food-info">
+          <h3 class="food-name">Double Cheese Margherita</h3>
+          <span class="price">&#8377;170</span>
+        </div>
+        <div class="addToCart">
+          <button> Add +</button>
+          <small>customizable</small>
+        </div>
+      </div>
+      <div class="food">
+        <div class="food-info">
+          <h3 class="food-name">Double Cheese Margherita</h3>
+          <span class="price">&#8377;170</span>
+        </div>
+        <div class="addToCart">
+          <button> Add +</button>
+          <small>customizable</small>
+        </div>
+      </div>
+      <div class="food">
+        <div class="food-info">
+          <h3 class="food-name">Double Cheese Margherita</h3>
+          <span class="price">&#8377;170</span>
+        </div>
+        <div class="addToCart">
+          <button> Add +</button>
+          <small>customizable</small>
+        </div>
+      </div>
+      <div class="food">
+        <div class="food-info">
+          <h3 class="food-name">Double Cheese Margherita</h3>
+          <span class="price">&#8377;170</span>
+        </div>
+        <div class="addToCart">
+          <button> Add +</button>
+          <small>customizable</small>
+        </div>
+      </div>
+      <div class="food">
+        <div class="food-info">
+          <h3 class="food-name">Double Cheese Margherita</h3>
+          <span class="price">&#8377;170</span>
+        </div>
+        <div class="addToCart">
+          <button> Add +</button>
+          <small>customizable</small>
+        </div>
+      </div>
+      <div class="food">
+        <div class="food-info">
+          <h3 class="food-name">Double Cheese Margherita</h3>
+          <span class="price">&#8377;170</span>
+        </div>
+        <div class="addToCart">
+          <button> Add +</button>
+          <small>customizable</small>
+        </div>
+      </div>
+      <div class="food">
+        <div class="food-info">
+          <h3 class="food-name">Double Cheese Margherita</h3>
+          <span class="price">&#8377;170</span>
+        </div>
+        <div class="addToCart">
+          <button> Add +</button>
+          <small>customizable</small>
+        </div>
+      </div>
+      <div class="food">
+        <div class="food-info">
+          <h3 class="food-name">Double Cheese Margherita</h3>
+          <span class="price">&#8377;170</span>
+        </div>
+        <div class="addToCart">
+          <button> Add +</button>
+          <small>customizable</small>
+        </div>
+      </div>
+      <div class="food">
+        <div class="food-info">
+          <h3 class="food-name">Double Cheese Margherita</h3>
+          <span class="price">&#8377;170</span>
+        </div>
+        <div class="addToCart">
+          <button> Add +</button>
+          <small>customizable</small>
+        </div>
+      </div>
+
+    </div>
+  </main>
 </div>
 `;
