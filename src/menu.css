@@ -82,7 +82,7 @@ font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 @media (min-width:1024px) {
     .menu-container{
-        grid-template-columns: auto auto auto auto;
+        grid-template-columns: auto auto auto;
     }
 }
 
@@ -117,4 +117,59 @@ font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 .addToCart small{
     font-family: monospace;
+}
+@media (min-width:1024px) {
+    main{
+    width: 100%;
+    display: flex;
+    gap: 20px;
+}
+.cart-sidebar{
+    width: 500px;
+}
+}
+
+.cart-sidebar{
+  
+    height:auto;
+    background-color: #dbf5cc;
+    border: 3px solid black;
+}
+.cart-sidebar h3{
+    padding: 20px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:#b6f98f ;
+}
+.line{
+    width: 100%;
+    background-color: black;
+    height: 2px;
+}
+
+.location{
+    width: 80%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+}
+#location{
+    width: 40px;
+    border: none;
+    height: 30px;
+    background-color: #FF6B6B;
+    cursor: pointer;
+    border: 2px solid black;
+    margin-left: 50px;
+}
+.location input{
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    border:2px solid black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    outline: none;
 }
