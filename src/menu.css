@@ -261,8 +261,7 @@ font-family:Verdana, Geneva, Tahoma, sans-serif;
    background-color: #ffd23f;
    border-top: 4px solid black;
    display:flex;
-   gap: 30%;
-
+   gap: 20%;
 }
 .grand-total{
     padding:10px;
@@ -270,5 +269,5 @@ font-family:Verdana, Geneva, Tahoma, sans-serif;
     color: hsl(0, 9%, 6%);
 }
 .bill img{
-   width: 30%;
+ width: 30%;
 }
