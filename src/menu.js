@@ -1,4 +1,5 @@
 import '/src/menu.css'
+import pizzaboy from './assets/pizza-boy.png'
 document.querySelector("#app").innerHTML = `
 <h1> menu items check </h1>
 `;
@@ -26,7 +27,7 @@ document.querySelector("#app").innerHTML = /*html*/ `
           <span class="price">&#8377;170</span>
         </div>
         <div class="addToCart">
-          <button> Add +</button>
+          <button class="add"> Add +</button>
           <small>customizable</small>
         </div>
       </div>
@@ -36,7 +37,7 @@ document.querySelector("#app").innerHTML = /*html*/ `
           <span class="price">&#8377;199</span>
         </div>
         <div class="addToCart">
-          <button> Add +</button>
+          <button class="add"> Add +</button>
           <small>recommanded</small>
         </div>
       </div>
@@ -46,7 +47,7 @@ document.querySelector("#app").innerHTML = /*html*/ `
           <span class="price">&#8377;190</span>
         </div>
         <div class="addToCart">
-          <button> Add +</button>
+          <button class="add"> Add +</button>
           <small>customizable</small>
         </div>
       </div>
@@ -56,7 +57,7 @@ document.querySelector("#app").innerHTML = /*html*/ `
           <span class="price">&#8377;200</span>
         </div>
         <div class="addToCart">
-          <button> Add +</button>
+          <button class="add"> Add +</button>
           <small>customizable</small>
         </div>
       </div>
@@ -66,7 +67,7 @@ document.querySelector("#app").innerHTML = /*html*/ `
           <span class="price">&#8377;170</span>
         </div>
         <div class="addToCart">
-          <button> Add +</button>
+          <button class="add"> Add +</button>
           <small>customizable</small>
         </div>
       </div>
@@ -78,7 +79,7 @@ document.querySelector("#app").innerHTML = /*html*/ `
           <span class="price">&#8377;250</span>
         </div>
         <div class="addToCart">
-          <button> Add +</button>
+          <button class="add"> Add +</button>
           <small>customizable</small>
         </div>
       </div>
@@ -88,7 +89,7 @@ document.querySelector("#app").innerHTML = /*html*/ `
           <span class="price">&#8377;230</span>
         </div>
         <div class="addToCart">
-          <button> Add +</button>
+          <button class="add"> Add +</button>
           <small>customizable</small>
         </div>
       </div>
@@ -98,7 +99,7 @@ document.querySelector("#app").innerHTML = /*html*/ `
           <span class="price">&#8377;300</span>
         </div>
         <div class="addToCart">
-          <button> Add +</button>
+          <button class="add"> Add +</button>
           <small>customizable</small>
         </div>
       </div>
@@ -108,7 +109,7 @@ document.querySelector("#app").innerHTML = /*html*/ `
           <span class="price">&#8377;280</span>
         </div>
         <div class="addToCart">
-          <button> Add +</button>
+          <button class="add"> Add +</button>
           <small>customizable</small>
         </div>
       </div>
@@ -118,7 +119,7 @@ document.querySelector("#app").innerHTML = /*html*/ `
           <span class="price">&#8377;199</span>
         </div>
         <div class="addToCart">
-          <button> Add +</button>
+          <button class="add"> Add +</button>
           <small>customizable</small>
         </div>
       </div>
@@ -128,7 +129,7 @@ document.querySelector("#app").innerHTML = /*html*/ `
           <span class="price">&#8377;240</span>
         </div>
         <div class="addToCart">
-          <button> Add +</button>
+          <button class="add"> Add +</button>
           <small>customizable</small>
         </div>
       </div>
@@ -138,7 +139,7 @@ document.querySelector("#app").innerHTML = /*html*/ `
           <span class="price">&#8377;240</span>
         </div>
         <div class="addToCart">
-          <button> Add +</button>
+          <button class="add"> Add +</button>
           <small>customizable</small>
         </div>
       </div>
@@ -148,7 +149,7 @@ document.querySelector("#app").innerHTML = /*html*/ `
           <span class="price">&#8377;290</span>
         </div>
         <div class="addToCart">
-          <button> Add +</button>
+          <button class="add"> Add +</button>
           <small>customizable</small>
         </div>
       </div>
@@ -158,7 +159,7 @@ document.querySelector("#app").innerHTML = /*html*/ `
           <span class="price">&#8377;290</span>
         </div>
         <div class="addToCart">
-          <button> Add +</button>
+          <button class="add"> Add +</button>
           <small>customizable</small>
         </div>
       </div>
@@ -168,7 +169,7 @@ document.querySelector("#app").innerHTML = /*html*/ `
           <span class="price">&#8377;359</span>
         </div>
         <div class="addToCart">
-          <button> Add +</button>
+          <button class="add"> Add +</button>
           <small>customizable</small>
         </div>
       </div>
@@ -178,7 +179,7 @@ document.querySelector("#app").innerHTML = /*html*/ `
           <span class="price">&#8377;399</span>
         </div>
         <div class="addToCart">
-          <button> Add +</button>
+          <button class="add"> Add +</button>
           <small>customizable</small>
         </div>
       </div>
@@ -188,7 +189,7 @@ document.querySelector("#app").innerHTML = /*html*/ `
           <span class="price">&#8377;100</span>
         </div>
         <div class="addToCart">
-          <button> Add +</button>
+          <button class="add"> Add +</button>
           <small>customizable</small>
         </div>
       </div>
@@ -198,7 +199,7 @@ document.querySelector("#app").innerHTML = /*html*/ `
           <span class="price">&#8377;100</span>
         </div>
         <div class="addToCart">
-          <button> Add +</button>
+          <button class="add"> Add +</button>
           <small>customizable</small>
         </div>
       </div>
@@ -208,7 +209,7 @@ document.querySelector("#app").innerHTML = /*html*/ `
           <span class="price">&#8377;149</span>
         </div>
         <div class="addToCart">
-          <button> Add +</button>
+          <button class="add"> Add +</button>
           <small>customizable</small>
         </div>
       </div>
@@ -225,6 +226,15 @@ document.querySelector("#app").innerHTML = /*html*/ `
 <input type="location" placeholder="enter location">
     </div>
 <div class="line"></div>
+<div class="cart-item-container">
+  <div class="cart-items">
+     <h2 style="text-align:center">WHY DON'T YOU ADD SOMETHING?</h2>
+  </div>
+  <div class="bill">
+  
+</div>
+</div>
+
 
 
     <!-- end of the cart-sidebar -->
@@ -233,3 +243,113 @@ document.querySelector("#app").innerHTML = /*html*/ `
   </main>
 </div>
 `;
+
+
+// add to cart .
+ 
+const cartItems = [];
+const addButtons = document.querySelectorAll(".add");
+
+addButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+   const food = button.closest(".food");
+
+   const name = food.querySelector(".food-name").textContent.trim();
+   const price = Number(food.querySelector(".price").textContent.replace("₹", ""));
+
+   const existingItem = cartItems.find((item) => item.name === name);
+
+   if(existingItem){
+    existingItem.quantity++;
+   }
+   else{
+    cartItems.push({
+      name: name, 
+      price : price,
+      quantity : 1
+    });
+   }
+renderCart();
+
+  });
+});
+
+function renderCart(){
+  const cartContainer = document.querySelector(".cart-items");
+  cartContainer.innerHTML = "";
+  cartItems.forEach((item, index) => {
+    cartContainer.innerHTML += ` 
+    <div class="line"></div>
+    <div class="remove-button">
+        <button class="removeFromCart" data-index="${index}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+  <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+</svg>
+</button>
+</div>
+    <div>
+    <h4>${item.name}</h4>
+    <big>₹ ${item.price}</big>
+    </div>
+    <div class="quantity-control">
+    <button class="minus" data-index="${index}">-</button>
+    <span>${item.quantity}</span>
+     <button class="plus" data-index="${index}">+</button>
+       
+    </div>
+  <h2>Total : ₹ ${item.price * item.quantity} </h2>
+    <div class="line"></div>
+    `;
+  });
+
+  // decrease button
+  document.querySelectorAll(".minus").forEach((button)=>{
+    button.addEventListener("click", ()=>{
+      const index = Number(button.dataset.index);
+      cartItems[index].quantity--;
+      if(cartItems[index].quantity===0){
+        cartItems.splice(index,1);
+      }
+      renderCart();
+    });
+  });
+// add button
+document.querySelectorAll(".plus").forEach((button) => {
+  button.addEventListener("click" , ()=>{
+    const index = Number(button.dataset.index);
+    cartItems[index].quantity++;
+    renderCart();
+  });
+});
+
+document.querySelectorAll(".removeFromCart").forEach((button)=>{
+  button.addEventListener("click" , ()=>{
+    const index = Number(button.dataset.index);
+    cartItems.splice(index,1);
+    renderCart();
+  });
+});
+
+
+// grand total calculation
+
+const grandtotal = cartItems.reduce((total,item) => {
+  return total + item.price * item.quantity;
+},0);
+
+document.querySelector(".bill").innerHTML = `
+<div class="grand-total">
+ <h4><u> Bill Details</u></h4>
+ <br>
+<strong><b>Item total</b> : ₹ ${grandtotal}</strong>
+<br>
+<br>
+<strong>Taxes : 0</strong>
+<br>
+<br>
+<strong>To Pay :₹ ${grandtotal} </strong>
+</div>
+<img src="${pizzaboy}" alt="pizza boy">
+`
+
+
+}
