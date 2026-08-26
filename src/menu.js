@@ -1,4 +1,10 @@
 import '/src/menu.css'
+import {db} from "./firebase.js"
+import{
+  collection,
+  addDoc
+} from "https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore.js"
+
 import pizzaboy from './assets/pizza-boy.png'
 document.querySelector("#app").innerHTML = `
 <h1> menu items check </h1>
@@ -223,7 +229,19 @@ document.querySelector("#app").innerHTML = /*html*/ `
   <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/>
   <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
 </svg> </button>
-<input type="location" placeholder="enter location">
+<input type="text" id="userLocation" placeholder="enter location">
+    </div>
+    <div class="fullname">
+      <button id="fullName"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+  <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+</svg></button>
+      <input type="text" id="userFullname" placeholder="Full name"> 
+    </div>
+     <div class="phoneNum">
+      <button id="phoneNum"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+  <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+</svg></button>
+      <input type="number" id="userPhonenum" placeholder="enter phone num"> 
     </div>
 <div class="line"></div>
 <div class="cart-item-container">
@@ -236,7 +254,9 @@ document.querySelector("#app").innerHTML = /*html*/ `
 </div>
 
 
-
+<div class="order-btn-container"> 
+  <button id="place-order"> place order</button>
+</div>
     <!-- end of the cart-sidebar -->
   </div>
 
@@ -353,3 +373,69 @@ document.querySelector(".bill").innerHTML = `
 
 
 }
+
+// placing order man hell yeah :D
+
+document.querySelector("#place-order").addEventListener("click" , async () => {
+  const location = document.querySelector("#userLocation");
+  const userName = document.querySelector("#userFullname");
+  const userNum = document.querySelector("#userPhonenum");
+  if(cartItems.length === 0){
+    alert("your cart is empty !");
+    return;
+  }
+  else if(location.value === ""){
+    alert("enter location");
+    return;
+  }
+  else if(userName.value === ""){
+    alert("enter name");
+    return;
+  }
+  else if(userNum.value === ""){
+    alert("enter phone number");
+    return;
+  }
+  
+  const grandTotal = cartItems.reduce((total,item) => {
+    return total + (item.price * item.quantity);
+  },0);
+
+  const placeOrderBtn =  document.querySelector("#place-order");
+
+  try{
+    placeOrderBtn.textContent = "placing order..";
+    placeOrderBtn.disabled = true;
+ console.log("Firebase DB:", db);
+    console.log("Cart:", cartItems);
+    console.log("Sending order...");
+   const docRef = await addDoc(collection(db, "orders"),
+     {
+      name : "ayush",
+      location : location.value.trim(),
+      phonenumber : userNum.value.trim(),
+      items : cartItems,
+      total : grandTotal,
+      status : "new-Order",
+      createdAt : new Date().toISOString()
+     }
+  );
+
+ alert("order placed");
+ alert("order id " , docRef.id);
+
+  cartItems.length = 0;
+  renderCart();
+
+
+  
+  } catch(error){
+
+    console.error(error);
+  }finally {
+    placeOrderBtn.textContent = "place order";
+    placeOrderBtn.disabled = false;
+  }
+
+
+});

@@ -5,7 +5,7 @@ document.querySelector("#app").innerHTML = `<div class="loading"><h1> loading </
 <header>
 <div class="head">
 <h2> Pixel pizza </h2> 
-<button> order </button>
+<a href="menu.html"><button> order </button><a>
 </div>
 </header> 
 <main>
