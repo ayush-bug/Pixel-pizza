@@ -295,3 +295,86 @@ cursor: pointer;
  transform: scale(1.1);
  box-shadow: 3px 3px 0px black;
 }
+
+
+.popup {
+  border: 4px solid #000 !important;
+  border-radius: 0 !important;
+  box-shadow: 10px 10px 0 #000 !important;
+  padding: 25px !important;
+}
+
+
+.place-title {
+  font-family: inherit;
+  font-weight: 900 !important;
+  text-transform: uppercase;
+  font-size: 1.8rem !important;
+  letter-spacing: 1px;
+  margin-bottom: 20px !important;
+}
+
+
+
+
+.success-message {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+
+.order-details {
+  border: 3px solid #000;
+  margin-top: 20px;
+  text-align: left;
+  box-shadow: 5px 5px 0 #000;
+}
+
+.detail{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 3px solid #000;
+  gap: 15px;
+}
+
+.detail:last-child {
+  border-bottom: none;
+}
+
+.detail span{
+  font-weight: 900;
+  font-size: 0.8rem;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.detail b{
+  font-size: 1rem;
+  word-break: break-all;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+
+.confirm-btn{
+  margin-top: 25px;
+  padding: 12px 22px;
+  border: 3px solid #000;
+  background: #ffcc00;
+  color: black;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 5px 5px 0 #000;
+  transition: 0.1s;
+}
+
+.confirm-btn:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 3px 3px 0 #000;
+}
+
+.confirm-btn:active {
+  transform: translate(5px, 5px);
+  box-shadow: none;
+}

@@ -363,10 +363,15 @@ document.querySelector(".bill").innerHTML = `
 <strong><b>Item total</b> : ₹ ${grandtotal}</strong>
 <br>
 <br>
-<strong>Taxes : 0</strong>
+<strong>Taxes : ₹0</strong>
+<br>
+<br>
+<strong>Delivery fee : ₹0</strong>
 <br>
 <br>
 <strong>To Pay :₹ ${grandtotal} </strong>
+<br>
+<small style="background:royalblue;color:white"> Note : payment will be COD</small>
 </div>
 <img src="${pizzaboy}" alt="pizza boy">
 `
@@ -381,19 +386,23 @@ document.querySelector("#place-order").addEventListener("click" , async () => {
   const userName = document.querySelector("#userFullname");
   const userNum = document.querySelector("#userPhonenum");
   if(cartItems.length === 0){
-    alert("your cart is empty !");
+    Swal.fire({
+  title: "NO item in cart",
+  text: "Add some items in cart to proceed?",
+  icon: "question"
+});
     return;
   }
   else if(location.value === ""){
-    alert("enter location");
+    Swal.fire("Please enter your location");
     return;
   }
   else if(userName.value === ""){
-    alert("enter name");
+    swal.fire("Please enter your name");
     return;
   }
   else if(userNum.value === ""){
-    alert("enter phone number");
+    swal.fire("Please enter your phone number");
     return;
   }
   
@@ -420,10 +429,39 @@ document.querySelector("#place-order").addEventListener("click" , async () => {
       createdAt : new Date().toISOString()
      }
   );
+var orderId = docRef.id;
+Swal.fire({
+  title: "Order Placed!! :D",
+  html: `
+    <div class="order-success">
+    <p class="success-message">Your pizza is getting ready : ) <br> we will deliver in just <b>30-45 minutes</b> </p>
+    <div class="order-details">
+    <div class="detail"> <span>NAME </span> <b>${userName.value}</b></div>
+    <div class="detail"><span>LOCATION </span><b>${location.value}</b></div>
+    <div class="detail"> <span>ORDER-ID </span> <b>${orderId}</b></div>
+    <div class="detail"><span>TOTAL TO PAY </span><b>₹${grandTotal}</b></div>
+    </div>
+    </div>
+  `,
+  icon: "success",
+  confirmButtonText : "HELL yeah !",
+  customClass:{
+    popup : "popup",
+      title: "place-title",
+    confirmButton: "confirm-btn",
+  }
+  ,
+  buttonsStyling: false,
+  showClass: {
+    popup: ""
+  },
+  hideClass: {
+    popup: ""
+  }
+});
 
- alert("order placed");
- alert("order id " , docRef.id);
 
+  console.log(orderId);
   cartItems.length = 0;
   renderCart();
 
@@ -435,6 +473,8 @@ document.querySelector("#place-order").addEventListener("click" , async () => {
   }finally {
     placeOrderBtn.textContent = "place order";
     placeOrderBtn.disabled = false;
+    
+
   }
 
 
