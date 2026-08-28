@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.header h2{
+    font-family:'Lucida Sans', Arial, sans-serif;
+    padding: 10px;
+}
+.orders-card-container{
+      grid-column: span 4 / span 4;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+}
+.order-card{
+    width: 40%;
+    height: 150px;
+    background-color: #f5fe9b;
+    border-radius: 10px;
+    border: 3px solid black;
+    
+}
+.upper{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.data{
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.data h1{
+    color:#ff7a5c;
+    -webkit-text-stroke: 1px black;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 50px;
+}
+section{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(3,1fr);
+    gap: 5px;
+    padding: 10px;
+
+}
+.side-bar{
+    grid-row: span 5/span 5;
+    width: 400px;
+    background-color:#f1d1fc;
+    border: 2px solid black;
+    height: 90vh;
+    border-radius: 5px;
+}
+
+.recent-orders{
+    grid-column: span 4 / span 4;
+    grid-row: span 4 / span 4;
+    grid-column-start: 2;
+    grid-row-start: 2;
+    width: 100%;
+    height: 60vh;
+    border: 3px solid black;
+    border-radius: 5px;
+}
