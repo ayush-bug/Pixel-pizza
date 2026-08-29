@@ -1,4 +1,10 @@
 import './dashboard.css'
+ import {db} from "./firebase.js"
+import {
+  collection,
+  onSnapshot
+}from "https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore.js"
+
 
 document.querySelector("#app").innerHTML = `
 <main>
@@ -15,7 +21,7 @@ document.querySelector("#app").innerHTML = `
   <path d="M7.009 12.139a7.6 7.6 0 0 1-1.804-1.352A7.6 7.6 0 0 1 3.794 8.86c-1.102.992-1.965 5.054-1.839 5.18.125.126 3.936-.896 5.054-1.902Z"/>
 </svg></span><h2>Total orders</h2></div>
 <div class="data">
-<h1>34</h1>
+<h1 id="totalOrders">0</h1>
 
 </div>
     </div>
@@ -25,7 +31,7 @@ document.querySelector("#app").innerHTML = `
   <path d="m5.354 7.146.896.897-.707.707-.897-.896a.5.5 0 1 1 .708-.708"/>
 </svg></span><h2>Completed orders</h2></div>
 <div class="data">
-<h1>12</h1>
+<h1 id="completedOrders">000</h1>
 
 </div>
     </div>
@@ -37,7 +43,7 @@ document.querySelector("#app").innerHTML = `
 </svg>
      </span><h2>Pending orders</h2></div>
 <div class="data">
-<h1>22</h1>
+<h1 id="pendingOrders">000</h1>
 </div>
     
     </div>
@@ -49,9 +55,9 @@ document.querySelector("#app").innerHTML = `
   <path d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083q.088-.517.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1z"/>
   <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 6 6 0 0 1 3.13-1.567"/>
 </svg>
-     </span><h2>Today's Payout</h2></div>
+     </span><h2>Total Payout</h2></div>
 <div class="data">
-<h1>₹ 1200</h1>
+<h1 id="totalPayout">₹000</h1>
 </div>
     </div>
   </div>
@@ -61,3 +67,98 @@ document.querySelector("#app").innerHTML = `
 
 
 `;
+
+
+
+// retreiving the data lamo
+
+const ordersData = collection(db, "orders");
+
+onSnapshot(ordersData, (snapshot) =>{
+ const orders = [];
+  snapshot.forEach((Orderdata) => {
+    orders.push({
+      id:Orderdata.id,
+      ...Orderdata.data()
+    });
+  });
+  console.log(orders);
+  updateDashboard(orders);
+   renderRecentOrders(orders);
+
+});
+
+
+
+function updateDashboard(orders){
+
+  const totalOrders = orders.length;
+
+  const completedOrders = orders.filter(order => order.status === "completed").length;
+  const pendingOrders = orders.filter(
+     order => 
+         order.status !== "completed"
+  ).length;
+
+// payout
+
+const totalPayout = orders.reduce((total,order) => {
+  return total + Number(order.total || 0);
+
+},0);
+
+
+  
+document.querySelector("#totalOrders").textContent = totalOrders;
+document.querySelector("#completedOrders").textContent = completedOrders;
+document.querySelector("#pendingOrders").textContent = pendingOrders;
+document.querySelector("#totalPayout").textContent = `₹ ${totalPayout}`;
+
+}
+
+
+function renderRecentOrders(orders){
+  const container = document.querySelector(".recent-orders");
+  if(orders.length === 0) {
+    container.innerHTML = `<h2> no orders yet </h2>`;
+    return;
+  }
+
+  const recentOrders = [...orders].reverse().slice(0,10);
+
+  container.innerHTML =` 
+   <div class="recent-header">
+   <h2>Recent Orders</h2>
+   </div>
+
+   <div class="orders-list">
+   ${recentOrders.map(orders => ` 
+       <div class="recent-order">
+       
+       <div>
+       <strong> 
+        #${orders.id.slice(0,8)}
+       </strong>
+       <p>
+       ${orders.name}
+       </p>
+    </div>
+
+   <div>
+   <strong>
+     ${orders.total}
+   </strong>
+   <span class="status ${orders.status}">
+    ${orders.status}
+   </span>
+   </div>
+
+
+    </div>
+    `).join("")}
+    </div>
+  
+  
+  
+  `;
+}
