@@ -420,12 +420,12 @@ document.querySelector("#place-order").addEventListener("click" , async () => {
     console.log("Sending order...");
    const docRef = await addDoc(collection(db, "orders"),
      {
-      name : "ayush",
+      name : userName.value.trim(),
       location : location.value.trim(),
       phonenumber : userNum.value.trim(),
       items : cartItems,
       total : grandTotal,
-      status : "new-Order",
+      status : "new",
       createdAt : new Date().toISOString()
      }
   );
