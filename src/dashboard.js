@@ -191,24 +191,24 @@ function renderRecentOrders(orders){
    </div>
 
    <div class="orders-list">
-   ${recentOrders.map(orders => ` 
-       <div class="recent-order">
+   ${recentOrders.map(order => ` 
+       <div class="recent-order"  data-id="${order.id}">
        
        <div>
        <strong> 
-        #${orders.id.slice(0,8)}
+        #${order.id.slice(0,8)}
        </strong>
        <p>
-       ${orders.name}
+       ${order.name}
        </p>
     </div>
 
    <div>
    <strong>
-    ₹ ${orders.total}
+    ₹ ${order.total}
    </strong>
-   <span class="status ${orders.status}">
-    ${orders.status}
+   <span class="status ${order.status}">
+    ${order.status}
    </span>
    </div>
 
@@ -220,6 +220,12 @@ function renderRecentOrders(orders){
   
   
   `;
+  document.querySelectorAll(".recent-order").forEach((orderDiv) => {
+ orderDiv.addEventListener("click" , ()=> {
+   const orderId = orderDiv.dataset.id;
+  window.location.href =  `order-data.html?id=${encodeURIComponent(orderId)}`;
+ })
+  });
 }
 
 function updateToday(orders){
