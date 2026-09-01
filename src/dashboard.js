@@ -1,12 +1,40 @@
 import './dashboard.css'
  import {db} from "./firebase.js"
+ import {auth} from "./firebase.js"
 import {
   collection,
   onSnapshot
 }from "https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore.js"
 
+import {
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut
+} from "https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js";
 
 document.querySelector("#app").innerHTML = `
+<div id="login">
+ <div class="login-box">
+   <h1>Admin Login</h1>
+  <form id="loginForm">
+   <input type="email" id="email" placeholder="admin email" requried>
+   <input type="password" id="password" placeholder="password" required>
+   <button type="submit"> LOGIN</button>
+<br>
+<br>
+   <p id="loginerror">
+    use this emails and passwords 
+ <br>
+    email : <u>pixelpizza@admin.com </u><br>
+    password : <u>123456</u>
+   </p>
+  </form>
+
+ </div>
+</div>
+
+
+ <div id="dashboard" style="display:none;">
 <main>
   <div class="header">
     <h2>PIXEL PIZZA ADMIN DASHBOARD </h2>
@@ -124,7 +152,7 @@ document.querySelector("#app").innerHTML = `
   </section>
 </main>
 
-
+</div>
 `;
 
 
@@ -266,3 +294,40 @@ function updateToday(orders){
 }
 
 
+
+
+// admin login code
+
+const loginScreen = document.querySelector("#login");
+const dashboard = document.querySelector("#dashboard")
+
+onAuthStateChanged(auth, (user) => {
+  if(user){
+    loginScreen.style.display = "none";
+    dashboard.style.display = "block";
+  }
+  else{
+    loginScreen.style.display = "flex";
+    dashboard.style.display = "none";
+  }
+
+document.querySelector("#loginForm").addEventListener("submit" , async(e) => {
+  e.preventDefault();
+  const email =document.querySelector("#email").value.trim();
+  const password = document.querySelector("#password").value;
+  const error = document.querySelector("#loginerror");
+
+  try{
+    await signInWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+  } catch (err){
+    error.textContent = err.code;
+  }
+
+
+});
+
+})
