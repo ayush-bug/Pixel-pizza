@@ -86,5 +86,5 @@ document.querySelector("#app").innerHTML = `<div class="loading"><h1> loading </
 </div>
 `;
 document.querySelector(".makeaorder").addEventListener("click" , function(){
- window.location.href = "admin-dashboard.html";
+ window.location.href = "menu.html";
 })
