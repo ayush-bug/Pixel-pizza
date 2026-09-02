@@ -27,6 +27,9 @@ header{
   font-family: "Pixelify Sans", sans-serif;
   display: flex;
 }
+.head a{
+  margin-left: 10px;
+}
 .head h2{
   width: 100%;
   height: 100%;
@@ -202,5 +205,23 @@ header{
   .footer{
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
     padding: 30px;
+  }
+  .makeaorder{
+    width: 40%;
+    height: 50px;
+    border: 3px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   background-color: #FF7A5C;
+   cursor: pointer;
+  
+  }
+  .makeaorder:hover{
+    box-shadow: 4px 4px 0px black;
   }

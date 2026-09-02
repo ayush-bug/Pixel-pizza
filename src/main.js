@@ -6,6 +6,7 @@ document.querySelector("#app").innerHTML = `<div class="loading"><h1> loading </
 <div class="head">
 <h2> Pixel pizza </h2> 
 <a href="menu.html"><button> order </button><a>
+<a href="admin-dashboard.html"> <button> Admin Login</button></a>
 </div>
 </header> 
 <main>
@@ -73,9 +74,17 @@ document.querySelector("#app").innerHTML = `<div class="loading"><h1> loading </
       </div>
       </div>
 </div>
+
 <div class="footer">
+<div class="makeaorder">
+  Make a order
+</div>
+<br>
 <footer>
  <div class="name"> <h2>&copy; 2026 <span>Pixel Pizza</span></h2></div> 
 </footer>
 </div>
 `;
+document.querySelector(".makeaorder").addEventListener("click" , function(){
+ window.location.href = "admin-dashboard.html";
+})
