@@ -61,6 +61,7 @@ document.querySelector("#app").innerHTML = `
 <div class="button">
 <button id="mark"> Mark as out of delivery</button>
 <button id="cancel">cancel this order</button>
+<button id="completed">Mark as completed</button>
 </div>
  </div>
 
@@ -110,6 +111,8 @@ document.querySelector("#order-items").innerHTML = order.items.map(item => `
   await updateDoc(orderRef, {
     status: "outofdelivery"
   });
+    document.querySelector("#order-status").textContent = "Out Of Delivery";
+
     });
 
     document.querySelector(".back").addEventListener("click" , function(){
@@ -122,7 +125,17 @@ document.querySelector("#order-items").innerHTML = order.items.map(item => `
   await updateDoc(orderRef, {
     status: "cancelled"
   });
+  document.querySelector("#order-status").textContent = "cancelled";
     });
 if(order.status === "completed"){
     document.querySelector(".button").style.display = 'none';
 }
+
+ document.querySelector("#completed").addEventListener("click" , async function(){
+     const orderRef = doc(db, "orders", orderId);
+
+  await updateDoc(orderRef, {
+    status: "completed"
+  });
+  document.querySelector("#order-status").textContent = "completed";
+    });

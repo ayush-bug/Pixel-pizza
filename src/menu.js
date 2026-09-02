@@ -248,11 +248,11 @@ document.querySelector("#app").innerHTML = /*html*/ `
   <div class="cart-items">
      <h2 style="text-align:center">WHY DON'T YOU ADD SOMETHING?</h2>
   </div>
-  <div class="bill">
+ 
+</div>
+ <div class="bill">
   
 </div>
-</div>
-
 
 <div class="order-btn-container"> 
   <button id="place-order"> place order</button>
